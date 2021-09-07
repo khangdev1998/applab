@@ -1,0 +1,151 @@
+.client {
+  margin-top: 100px;
+  padding-top: 138px;
+  border-top: 2px solid $boder-color;
+  &__container {
+    position: relative;
+  }
+  &__image {
+    position: absolute;
+    left: -255px;
+    pointer-events: none;
+  }
+  &-content {
+    max-width: 600px;
+    margin-left: auto;
+  }
+  &__icon {
+    font-size: 20px;
+    padding: 35px 0 14px;
+    color: #ffcc00;
+  }
+  &-ceo {
+    padding-top: 58px;
+    @include flexbox(
+      (
+        justify-content: space-between,
+        align-items: center,
+      )
+    );
+  }
+  &-ceo__group {
+    word-break: break-all;
+    @include flexbox(
+      (
+        align-items: center,
+      )
+    );
+  }
+  &-ceo__main {
+    padding-left: 28px;
+    font-size: 18px;
+  }
+  &-ceo__name {
+    font-size: 18px;
+    font-weight: bold;
+    color: $primary-color;
+  }
+  &-ceo__jop {
+    padding-top: 8px;
+    display: block;
+    font-weight: 400;
+    color: $secondary-color;
+  }
+  &-ceo__direction {
+    @include flexbox(
+      (
+        align-items: center,
+      )
+    );
+  }
+  &-ceo__icon {
+    @include size(50px);
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 50px !important;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid;
+    color: #dee1e6;
+    background: transparent;
+    &--bg {
+      @include bgc(#eff3f8);
+      color: $third-color;
+      border: transparent;
+    }
+  }
+  &-ceo__dash {
+    @include size(1px, 25px);
+    @include bgc(#e7e7e7);
+    margin: 0 10px;
+  }
+  .block-content:first-child .block-content__heading {
+    font-size: 40px;
+  }
+  .block-content:nth-of-type(2) .block-content__heading {
+    font-size: 20px;
+  }
+  @include maxWidth(1279px) {
+    &-content {
+      max-width: 450px;
+    }
+    &__image {
+      left: 0;
+      height: 420px;
+    }
+    .block-content:first-child .block-content__heading {
+      font-size: 28px;
+    }
+    .block-content:nth-of-type(2) .block-content__heading {
+      font-size: 18px;
+    }
+  }
+  @include maxWidth(1023px) {
+    margin-top: 50px;
+    padding-top: 50px;
+    &__container {
+      @include flexbox(
+        (
+          align-items: center,
+          flex-direction: column,
+        )
+      );
+    }
+    &__image {
+      position: unset;
+      height: 400px;
+    }
+    &-content {
+      padding-top: 40px;
+      max-width: 100%;
+    }
+  }
+  @include maxWidth(767px) {
+    &__image {
+      height: 290px;
+    }
+    &-ceo__main {
+      padding-left: 20px;
+    }
+  }
+  @include maxWidth(424px) {
+    &__image {
+      height: 215px;
+    }
+    &-ceo {
+      flex-direction: column;
+    }
+    &-ceo__group {
+      padding-bottom: 15px;
+    }
+    &-ceo__name, &-ceo__jop {
+      font-size: 16px;
+    }
+    .block-content:first-child .block-content__heading {
+      font-size: 20px;
+    }
+    .block-content:nth-of-type(2) .block-content__heading {
+      font-size: 16px;
+    }
+  }
+}

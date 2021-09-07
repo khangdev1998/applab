@@ -1,0 +1,136 @@
+.services {
+  --center-icon: 66px;
+  padding-top: 110px;
+  &-list {
+    margin: auto;
+    max-width: 1035px;
+    @include flexbox(
+      (
+        justify-content: space-between,
+      )
+    );
+  }
+  &-list__items {
+    width: calc(33.3333% - 76.6667px);
+  }
+  &-list__icon {
+    font-size: 28px;
+    @include size(var(--center-icon));
+    line-height: var(--center-icon) !important;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    &::after {
+      content: "";
+      @include blockCenter("both");
+      @include size(100%);
+      background-color: currentColor;
+      border-radius: inherit;
+      opacity: 0.2;
+    }
+  }
+  &-content {
+    padding-top: 30px;
+    height: calc(100% - var(--center-icon));
+    @include flexbox(
+      (
+        flex-direction: column,
+        justify-content: space-between,
+      )
+    );
+  }
+  &-content__title {
+    font-size: 20px;
+    margin-bottom: 8px;
+    @include lineClamp();
+    line-height: normal;
+  }
+  &-content__desc {
+    font-weight: 500;
+    color: $secondary-color;
+    line-height: 1.5;
+    word-break: break-all;
+  }
+  @include maxWidth(1023px) {
+    &-list__items {
+      width: calc(33.3333% - 20px);
+    }
+    &-content__title {
+      font-size: 18px;
+    }
+    &-content__desc {
+      font-size: 15px;
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 60px;
+    &-list {
+      display: block;
+      text-align: center;
+    }
+    &-list__items {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+    &-content {
+      padding-top: 20px;
+    }
+  }
+}
+
+.code {
+  padding: 115px 0 70px;
+  border-bottom: 1px solid $boder-color;
+  &__container {
+    max-width: 1035px;
+    margin: auto;
+    @include flexbox(
+      (
+        justify-content: space-between,
+        align-items: center,
+      )
+    );
+  }
+  &__image {
+    transform: translateX(-106px);
+    max-width: 600px;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  .block-content__desc {
+    padding-bottom: 34px;
+  }
+  @include maxWidth(1279px) {
+    &__image {
+      max-width: 450px;
+      transform: initial;
+      padding-right: 28px;
+    }
+  }
+  @include maxWidth(1023px) {
+    text-align: center;
+    &__container {
+      @include flexbox(
+        (
+          flex-direction: column-reverse,
+        )
+      );
+    }
+    &__image {
+      margin: auto;
+      padding: unset;
+      margin-top: 40px;
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 50px;
+    &__image {
+      max-width: 340px;
+    }
+  }
+  @include maxWidth(374px) {
+    &__image {
+      max-width: 265px;
+    }
+  }
+}

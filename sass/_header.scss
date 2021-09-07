@@ -1,0 +1,216 @@
+.header {
+  text-align: center;
+  background: url("../images/header-bg.png") no-repeat center / cover;
+  &-top {
+    padding-top: 87px;
+  }
+  &-top {
+    @include flexbox(
+      (
+        justify-content: space-between,
+        align-items: center,
+      )
+    );
+  }
+  &-top__bars {
+    font-size: 25px;
+    cursor: pointer;
+    display: none !important;
+  }
+  &-top__menu {
+    text-decoration: none;
+  }
+  &-top__items {
+    display: inline-block;
+    &:not(:first-child) {
+      margin-left: 40px;
+    }
+  }
+  &-top__link {
+    display: block;
+    text-decoration: none;
+    color: $primary-color;
+    font-weight: 600;
+    transition: 0.2s;
+    &:hover {
+      color: #fcae61;
+    }
+  }
+  &-bottom {
+    max-width: 1030px;
+    margin: 0 auto;
+    @include flexbox(
+      (
+        justify-content: space-between,
+        align-items: center,
+      )
+    );
+  }
+  &-bottom__content {
+    text-align: left;
+  }
+  &-bottom__check {
+    @include flexbox(
+      (
+        align-items: center,
+      )
+    );
+    @include bgc(#e2eaed);
+    max-width: 364px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
+  &-bottom__main {
+    margin-right: 10px;
+    @include bgc(#feaa25);
+    @include size(40px, 35px);
+    border-radius: 50%;
+    position: relative;
+    img {
+      display: block;
+      object-fit: cover;
+      @include blockCenter("both");
+    }
+  }
+  &-bottom__text {
+    font-size: 18px;
+    color: $primary-color;
+    font-weight: 500;
+    word-break: break-all;
+  }
+  &-bottom__heading {
+    color: $primary-color;
+    line-height: 1.2;
+    font-weight: bold;
+    font-size: 60px;
+  }
+  &-bottom__description {
+    padding: 37px 0 34px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $secondary-color;
+    line-height: 1.4;
+  }
+  &-bottom__watch {
+    margin-left: 28px;
+    font-size: 16px;
+    font-weight: 600;
+    color: $third-color;
+    text-decoration: none;
+  }
+  &-bottom__app {
+    pointer-events: none;
+  }
+  @include maxWidth(1023px) {
+    &-top {
+      padding-top: 50px;
+    }
+    &-top__bars {
+      display: block !important;
+    }
+    &-top__menu {
+      display: none;
+    }
+    &-bottom {
+      display: block;
+      padding-top: 50px;
+    }
+    &-bottom__content {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    &-bottom__check {
+      margin: auto;
+    }
+    &-bottom__app {
+      height: 580px;
+      object-fit: cover;
+    }
+    &-bottom__heading {
+      font-size: 35px;
+      margin: 28px 0 0;
+    }
+    &-bottom__description{
+      font-size: 16px;
+    }
+  }
+  @include maxWidth(767px) {
+    &-bottom__text {
+      font-size: 16px;
+    }
+    &-bottom__heading {
+      font-size: 25px;
+    }
+    &-bottom__description {
+      padding: 25px 0;
+    }
+    &-bottom__watch {
+      padding-top: 20px;
+      font-size: 14px;
+    }
+    &-bottom__app {
+      height: 460px;
+    }
+  }
+  @include maxWidth(374px) {
+    &-bottom__text {
+      font-size: 14px;
+    }
+    &-bottom__description {
+      font-size: 14px;
+    }
+    &-bottom__group {
+      max-width: 180px;
+      margin: 0 auto;
+      @include flexbox((
+        flex-direction: column,
+      ));
+    }
+    &-bottom__watch {
+      margin-left: 0;
+    }
+  }
+}
+
+.brand {
+  padding-top: 118px;
+  text-align: center;
+  &__heading {
+    font-weight: 600;
+    font-size: 16px;
+    color: $primary-color;
+    padding-bottom: 42px;
+    word-break: break-all;
+  }
+  &__image {
+    display: inline-block;
+  }
+  &__image:not(:first-of-type) {
+    margin-left: 70px;
+  }
+  @include maxWidth(1023px) {
+    padding-top: 50px;
+    &__heading {
+      padding-bottom: 28px;
+    }
+    &__image {
+      width: 70px;
+    }
+  }
+  @include maxWidth(767px) {
+    &__container {
+      @include flexbox((
+        justify-content: space-between,
+        align-items: center,
+        flex-direction: column
+      ));
+    }
+    &__image {
+      margin-bottom: 28px;
+      width: 110px;
+    }
+    &__image:not(:first-child) {
+       margin-left: 0;
+    }
+  }
+}

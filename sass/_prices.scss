@@ -1,0 +1,135 @@
+.prices {
+  padding-top: 168px;
+  .block-content {
+    text-align: center;
+    max-width: 650px;
+    margin: auto;
+  }
+  &-button {
+    @include flexbox((
+      justify-content: space-between,
+      align-items: center
+    ));
+    white-space: nowrap;
+    margin: 70px auto 30px;
+    border: 2px solid #EBEBEB;
+    border-radius: 40px;
+    max-width: 284px;
+    padding: 4px;
+    text-align: center;
+  }
+  .btn {
+    padding: 16.5px 35.7px;
+  }
+  &-button__text {
+    word-break: break-all;
+    display: block;
+    text-decoration: none;
+    color: $secondary-color;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16.5px 35.7px;
+  }
+  &-list {
+    max-width: 690px;
+    margin: auto;
+    @include flexbox(
+      (
+        justify-content: space-between,
+        align-items: baseline,
+      )
+    );
+  }
+  &-list__items {
+    word-break: break-all;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 325px;
+    color: #999ca5;
+    &--shadow {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 45px 0px;
+    }
+    &--border {
+      border: 2.8px solid #EBEBEB;
+    }
+  }
+  &-top {
+    text-align: center;
+    padding: 60px 50px 36px;
+    @include bgc(#f4f7f9);
+  }
+  &-top__number {
+    padding-bottom: 26px;
+    span {
+      display: inline-block;
+      font-weight: 400;
+      font-size: 18px;
+      color: inherit;
+    }
+    span:first-of-type {
+      transform: translateY(2.8px);
+      font-size: 60px;
+      font-weight: bold;
+      color: $primary-color;
+    }
+  }
+  &-top__title {
+    font-size: 20px;
+    color: $primary-color;
+    font-weight: bold;
+  }
+  &-top__desc {
+    padding-top: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  &-content {
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 20px 55px 26px;
+    span {
+      line-height: 3.2;
+      display: block;
+      &:last-of-type {
+        padding-bottom: 22px;
+      }
+    }
+    b {
+      padding-top: 30px;
+      display: block;
+      font-size: 16px;
+      color: $third-color;
+      font-weight: 600;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding-top: 100px;
+    &-list {
+      align-items: stretch;
+      max-width: 100%;
+    }
+    &-list__items {
+      width: calc(50% - 20px);
+    }
+  }
+  @include maxWidth(767px) {
+    &-top {
+      background-color: #c5e3f7;
+    }
+    &-list {
+      display: block;
+      flex-wrap: wrap;
+    }
+    &-list__items {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+  @include maxWidth(424px) {
+    .btn {
+      font-size: 12.5px;
+    }
+  }
+}

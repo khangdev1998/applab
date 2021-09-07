@@ -1,0 +1,77 @@
+.download {
+  margin-top: 105px;
+  border-top: 2px solid $boder-color;
+  &__container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    @include flexbox(
+      (
+        align-items: center,
+      )
+    );
+  }
+  &__wrapper {
+    max-width: 640px;
+  }
+  &__wallpaper {
+    pointer-events: none;
+    position: absolute;
+    top: 19px;
+    right: -215px;
+  }
+  &__image {
+    display: inline-block;
+    &:first-of-type {
+      margin-right: 28px;
+    }
+  }
+  .block-content__heading {
+    font-size: 48px;
+  }
+  .block-content__desc {
+    margin-bottom: 40px;
+  }
+  @include maxWidth(1279px) {
+    &__wallpaper {
+      height: 400px;
+    }
+    &__wrapper {
+      max-width: 520px;
+    }
+    .block-content__heading {
+      font-size: 36px;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding: 0;
+    margin-top: 50px;
+    &__container {
+      padding-top: 50px;
+      @include flexbox(
+        (
+          flex-direction: column,
+          align-items: center,
+        )
+      );
+    }
+    &__wallpaper {
+      position: unset;
+      height: 280px;
+      margin-top: 64px;
+    }
+  }
+  @include maxWidth(767px) {
+    &__wallpaper {
+      height: 180px;
+    }
+    .block-content__heading {
+      font-size: 25px;
+  }
+  }
+  @include maxWidth(374px) {
+    &__wallpaper {
+      height: 160px;
+    }
+  }
+}
